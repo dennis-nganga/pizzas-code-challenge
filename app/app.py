@@ -13,10 +13,9 @@ migrate = Migrate(app, db)
 
 db.init_app(app)
 
-@app.route('/')
+@app.route('/Home')
 def home():
-    return ''
-
+    return '<h2>Flask app for Restaurants</h2>'
 
 if __name__ == '__main__':
-    app.run(port=5555)
+  app.run(port=5501, debug=True)
