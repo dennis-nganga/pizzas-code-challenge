@@ -25,4 +25,3 @@ class RestaurantPizza(db.Model):
 
     pizza = db.relationship('Pizza', backref='restaurant_pizzas')
 
-
