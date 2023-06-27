@@ -24,7 +24,7 @@ def seed_data():
 
         pizzas = []
         for _ in range(50):
-            p = Pizza(name=fake.word(), price=randint(5, 20), created_at=datetime.now())
+            p = Pizza(name=fake.word(), price=randint(1, 30), created_at=datetime.now())
             pizzas.append(p)
 
         db.session.add_all(pizzas)
