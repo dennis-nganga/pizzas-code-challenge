@@ -1,7 +1,8 @@
 from random import randint, choice as rc
 from faker import Faker
-from app import app, db
-from models import Restaurant, Pizza, RestaurantPizza
+from app import app
+from models import db, Restaurant, Pizza, RestaurantPizza
+from datetime import datetime
 
 fake = Faker()
 
@@ -23,7 +24,7 @@ def seed_data():
 
         pizzas = []
         for _ in range(50):
-            p = Pizza(name=fake.word())
+            p = Pizza(name=fake.word(), price=randint(5, 20), created_at=datetime.now())
             pizzas.append(p)
 
         db.session.add_all(pizzas)
